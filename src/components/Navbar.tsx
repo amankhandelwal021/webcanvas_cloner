@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,11 +18,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', url: '#home' },
-    { name: 'Services', url: '#services' },
-    { name: 'Projects', url: '#projects' },
-    { name: 'About', url: '#about' },
-    { name: 'Contact', url: '#contact' },
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+    { name: 'Projects', url: '/projects' },
+    { name: 'About', url: '/about' },
+    { name: 'Contact', url: '/contact' },
   ];
 
   return (
@@ -32,30 +33,30 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a 
-          href="#home" 
+        <Link 
+          to="/" 
           className="text-2xl font-display font-bold tracking-tight"
         >
           design<span className="text-blue-500">owe</span>
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
-              href={link.url}
+              to={link.url}
               className="text-sm font-medium hover:text-blue-500 transition-colors duration-300 animate-underline"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact" 
+          <Link 
+            to="/contact" 
             className="bg-black text-white dark:bg-white dark:text-black px-5 py-2.5 rounded-md text-sm font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
           >
             Get in Touch
-          </a>
+          </Link>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -73,22 +74,22 @@ const Navbar = () => {
         <div className="md:hidden fixed inset-0 top-[72px] bg-white dark:bg-black z-40 animate-fade-in">
           <nav className="h-full flex flex-col items-center justify-center space-y-8 p-8">
             {navLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.url}
+                to={link.url}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-2xl font-medium hover:text-blue-500 transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a 
-              href="#contact" 
+            <Link 
+              to="/contact" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 bg-black text-white dark:bg-white dark:text-black px-8 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:shadow-lg"
             >
               Get in Touch
-            </a>
+            </Link>
           </nav>
         </div>
       )}
