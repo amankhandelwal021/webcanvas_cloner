@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Code, PenTool, Share2, BarChart, ArrowRight } from 'lucide-react';
+import { getFeaturedServices } from '../utils/services';
+import { ArrowRight } from 'lucide-react';
+import { Service } from '../utils/services/types';
 
 interface ServiceCardProps {
   title: string;
@@ -58,36 +60,14 @@ const ServiceCard = ({ title, description, icon, delay }: ServiceCardProps) => {
 };
 
 const Services = () => {
-  const services = [
-    {
-      title: 'Web Development',
-      description:
-        'We build fast, responsive, and accessible websites that deliver exceptional user experiences across all devices.',
-      icon: <Code size={24} />,
-      delay: 100,
-    },
-    {
-      title: 'UI/UX Design',
-      description:
-        'Our design process focuses on creating intuitive, engaging interfaces that align with your brand and business goals.',
-      icon: <PenTool size={24} />,
-      delay: 200,
-    },
-    {
-      title: 'Digital Marketing',
-      description:
-        'Strategic campaigns that connect with your audience, drive engagement, and deliver measurable results.',
-      icon: <Share2 size={24} />,
-      delay: 300,
-    },
-    {
-      title: 'Analytics & Insights',
-      description:
-        'Data-driven intelligence to optimize performance, understand user behavior, and inform business decisions.',
-      icon: <BarChart size={24} />,
-      delay: 400,
-    },
-  ];
+  const featuredServices = getFeaturedServices(4);
+  
+  const services = featuredServices.map((service, index) => ({
+    title: service.title,
+    description: service.description,
+    icon: service.icon,
+    delay: (index + 1) * 100,
+  }));
 
   return (
     <section
@@ -115,7 +95,7 @@ const Services = () => {
 
         <div className="mt-16 md:mt-20 text-center">
           <a
-            href="#contact"
+            href="/services"
             className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors animate-underline"
           >
             <span>Discover all services</span>
