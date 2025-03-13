@@ -97,7 +97,7 @@ const ProjectsPage = () => {
     <PageLayout
       hero={{
         title: 'Our Projects',
-        subtitle: 'Recent work we're proud of',
+        subtitle: 'Recent work we\'re proud of',
         badge: 'Portfolio',
         primaryCta: {
           text: 'Start Your Project',

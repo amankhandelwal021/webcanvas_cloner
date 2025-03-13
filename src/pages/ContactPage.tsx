@@ -7,7 +7,7 @@ const ContactPage = () => {
     <PageLayout
       hero={{
         title: 'Get in Touch',
-        subtitle: 'Let's start a conversation',
+        subtitle: 'Let\'s start a conversation',
         badge: 'Contact Us',
         primaryCta: {
           text: 'Schedule a Call',

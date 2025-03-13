@@ -21,7 +21,7 @@ export const services: Service[] = [
     id: 'web-development',
     title: 'Web Development',
     description: 'We build fast, responsive, and accessible websites that deliver exceptional user experiences across all devices.',
-    icon: <Code size={24} />,
+    icon: Code && { type: Code, props: { size: 24 } },
     longDescription: 'Our web development team combines technical expertise with creative problem-solving to build websites and web applications that not only look great but also perform exceptionally well. We focus on creating scalable, maintainable solutions that provide real business value.',
     features: [
       'Custom website development',
@@ -54,8 +54,8 @@ export const services: Service[] = [
     id: 'ui-ux-design',
     title: 'UI/UX Design',
     description: 'Our design process focuses on creating intuitive, engaging interfaces that align with your brand and business goals.',
-    icon: <PenTool size={24} />,
-    longDescription: 'Great design is more than aesthetics; it's about creating intuitive, enjoyable experiences that solve real user problems. Our design team works closely with you to understand your users and business objectives, crafting interfaces that delight users while driving business results.',
+    icon: PenTool && { type: PenTool, props: { size: 24 } },
+    longDescription: 'Great design is more than aesthetics; it\'s about creating intuitive, enjoyable experiences that solve real user problems. Our design team works closely with you to understand your users and business objectives, crafting interfaces that delight users while driving business results.',
     features: [
       'User research and testing',
       'Information architecture',
@@ -87,8 +87,8 @@ export const services: Service[] = [
     id: 'digital-marketing',
     title: 'Digital Marketing',
     description: 'Strategic campaigns that connect with your audience, drive engagement, and deliver measurable results.',
-    icon: <Share2 size={24} />,
-    longDescription: 'In today's digital landscape, standing out requires more than just a great product. Our digital marketing team creates data-driven strategies that connect with your target audience, build brand awareness, and drive measurable business growth across multiple channels.',
+    icon: Share2 && { type: Share2, props: { size: 24 } },
+    longDescription: 'In today\'s digital landscape, standing out requires more than just a great product. Our digital marketing team creates data-driven strategies that connect with your target audience, build brand awareness, and drive measurable business growth across multiple channels.',
     features: [
       'Search engine optimization (SEO)',
       'Pay-per-click advertising (PPC)',
@@ -120,7 +120,7 @@ export const services: Service[] = [
     id: 'analytics-insights',
     title: 'Analytics & Insights',
     description: 'Data-driven intelligence to optimize performance, understand user behavior, and inform business decisions.',
-    icon: <BarChart size={24} />,
+    icon: BarChart && { type: BarChart, props: { size: 24 } },
     longDescription: 'Making decisions based on accurate data is crucial for business success. Our analytics services help you collect, analyze, and visualize data from multiple sources to uncover actionable insights that drive growth and optimization opportunities across your digital presence.',
     features: [
       'Data tracking implementation',
@@ -153,7 +153,7 @@ export const services: Service[] = [
     id: 'cloud-solutions',
     title: 'Cloud Solutions',
     description: 'Scalable, secure cloud infrastructure and services that drive innovation and reduce operational costs.',
-    icon: <Database size={24} />,
+    icon: Database && { type: Database, props: { size: 24 } },
     longDescription: 'Cloud technology has revolutionized how businesses operate. Our cloud solutions team helps you leverage the power of cloud platforms to increase agility, enhance security, and scale your business while optimizing costs and improving operational efficiency.',
     features: [
       'Cloud migration strategies',
@@ -186,8 +186,8 @@ export const services: Service[] = [
     id: 'ecommerce-solutions',
     title: 'E-commerce Solutions',
     description: 'Custom e-commerce platforms and strategies that drive sales, enhance customer experience, and scale with your business.',
-    icon: <Globe size={24} />,
-    longDescription: 'E-commerce is more than just an online store; it's a complete digital sales ecosystem. Our e-commerce solutions combine compelling design, robust technology, and strategic marketing to create online shopping experiences that convert visitors into loyal customers.',
+    icon: Globe && { type: Globe, props: { size: 24 } },
+    longDescription: 'E-commerce is more than just an online store; it\'s a complete digital sales ecosystem. Our e-commerce solutions combine compelling design, robust technology, and strategic marketing to create online shopping experiences that convert visitors into loyal customers.',
     features: [
       'Custom e-commerce development',
       'Shopping cart optimization',
@@ -219,8 +219,8 @@ export const services: Service[] = [
     id: 'cybersecurity',
     title: 'Cybersecurity',
     description: 'Comprehensive security solutions that protect your digital assets, customer data, and business reputation.',
-    icon: <ShieldCheck size={24} />,
-    longDescription: 'In an increasingly connected world, cybersecurity isn't optional—it's essential. Our security specialists help identify vulnerabilities, implement robust protections, and develop security-conscious practices to safeguard your business and customer data against evolving threats.',
+    icon: ShieldCheck && { type: ShieldCheck, props: { size: 24 } },
+    longDescription: 'In an increasingly connected world, cybersecurity isn\'t optional—it\'s essential. Our security specialists help identify vulnerabilities, implement robust protections, and develop security-conscious practices to safeguard your business and customer data against evolving threats.',
     features: [
       'Security assessments and audits',
       'Penetration testing',
@@ -252,8 +252,8 @@ export const services: Service[] = [
     id: 'mobile-app-development',
     title: 'Mobile App Development',
     description: 'Native and cross-platform mobile applications that engage users with intuitive experiences and powerful functionality.',
-    icon: <Smartphone size={24} />,
-    longDescription: 'Mobile apps provide direct access to your customers' most personal device. Our mobile development team creates intuitive, high-performance applications that engage users, solve real problems, and represent your brand beautifully across all mobile platforms.',
+    icon: Smartphone && { type: Smartphone, props: { size: 24 } },
+    longDescription: 'Mobile apps provide direct access to your customers\' most personal device. Our mobile development team creates intuitive, high-performance applications that engage users, solve real problems, and represent your brand beautifully across all mobile platforms.',
     features: [
       'iOS and Android development',
       'Cross-platform solutions',
