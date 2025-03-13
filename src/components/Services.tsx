@@ -1,6 +1,5 @@
-
 import { useEffect, useRef, useState } from 'react';
-import { Code, PenTool, Share2, BarChart } from 'lucide-react';
+import { Code, PenTool, Share2, BarChart, ArrowRight } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
