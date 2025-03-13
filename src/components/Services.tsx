@@ -1,6 +1,8 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { getFeaturedServices } from '../utils/services';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Service } from '../utils/services/types';
 
 interface ServiceCardProps {
@@ -8,9 +10,10 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   delay: number;
+  id: string;
 }
 
-const ServiceCard = ({ title, description, icon, delay }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, delay, id }: ServiceCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -52,17 +55,25 @@ const ServiceCard = ({ title, description, icon, delay }: ServiceCardProps) => {
         {icon}
       </div>
       <h3 className="text-xl font-display font-bold mb-3">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
         {description}
       </p>
+      <Link
+        to={`/services/${id}`}
+        className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+      >
+        <span>Learn more</span>
+        <ArrowRight size={16} className="ml-2" />
+      </Link>
     </div>
   );
 };
 
 const Services = () => {
-  const featuredServices = getFeaturedServices(4);
+  const featuredServices = getFeaturedServices(6);
   
   const services = featuredServices.map((service, index) => ({
+    id: service.id,
     title: service.title,
     description: service.description,
     icon: service.icon,
@@ -80,27 +91,27 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight">
-            Elevate your digital presence
+            Comprehensive Software Solutions
           </h2>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-            Comprehensive solutions tailored to your unique business needs.
+            From website development to AI-powered applications, we deliver cutting-edge technology tailored to your business needs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
         </div>
 
         <div className="mt-16 md:mt-20 text-center">
-          <a
-            href="/services"
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors animate-underline"
+          <Link
+            to="/services"
+            className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             <span>Discover all services</span>
             <ArrowRight size={16} className="ml-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

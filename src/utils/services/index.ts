@@ -10,6 +10,7 @@ import { cybersecurityService } from './cybersecurity';
 import { mobileAppDevelopmentService } from './mobileAppDevelopment';
 import { customSoftwareDevelopmentService } from './customSoftwareDevelopment';
 import { aiMlSolutionsService } from './aiMlSolutions';
+import { iotSolutionsService } from './iotSolutions';
 
 // Combine all services into a single array
 export const services: Service[] = [
@@ -22,7 +23,8 @@ export const services: Service[] = [
   cybersecurityService,
   mobileAppDevelopmentService,
   customSoftwareDevelopmentService,
-  aiMlSolutionsService
+  aiMlSolutionsService,
+  iotSolutionsService
 ];
 
 // Utility functions
@@ -45,7 +47,8 @@ export {
   cybersecurityService,
   mobileAppDevelopmentService,
   customSoftwareDevelopmentService,
-  aiMlSolutionsService
+  aiMlSolutionsService,
+  iotSolutionsService
 };
 
 // Re-export the types
