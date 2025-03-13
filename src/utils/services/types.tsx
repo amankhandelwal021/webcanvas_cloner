@@ -18,5 +18,5 @@ export interface Service {
 }
 
 export const createServiceIcon = (Icon: React.ComponentType<any>): ReactNode => {
-  return <Icon size={24} />;
+  return Icon ? <Icon size={24} /> : null;
 };
