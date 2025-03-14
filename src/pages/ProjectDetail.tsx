@@ -123,7 +123,8 @@ const ProjectDetail = () => {
     'mobile': 'Mobile App',
     'branding': 'Branding',
     'software': 'Custom Software',
-    'ai': 'AI & ML'
+    'ai': 'AI & ML',
+    'iot': 'IoT Solutions'
   }[project.category] || project.category;
 
   return (

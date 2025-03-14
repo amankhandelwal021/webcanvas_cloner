@@ -129,6 +129,72 @@ const caseStudies: CaseStudy[] = [
       'https://images.unsplash.com/photo-1643228995862-4d9d99c40fc9?q=80&w=2070&auto=format&fit=crop'
     ],
     nextProject: 1
+  },
+  {
+    id: 4,
+    title: 'Smart Home IoT Ecosystem',
+    category: 'iot',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2069&auto=format&fit=crop',
+    client: 'SmartLiving Technologies',
+    completionDate: 'March 2024',
+    duration: '7 months',
+    industry: 'Real Estate / Smart Home',
+    technologies: ['Arduino', 'Raspberry Pi', 'MQTT', 'Node.js', 'React', 'AWS IoT', 'TensorFlow Lite'],
+    description: 'A comprehensive smart home ecosystem allowing homeowners to control, monitor, and automate every aspect of their living environment through a unified mobile and voice interface.',
+    challenge: 'SmartLiving Technologies wanted to create a unified smart home solution that would integrate with existing devices while providing enhanced security, energy efficiency, and convenience features that weren't available in fragmented consumer solutions.',
+    approach: 'We began with extensive compatibility testing of existing smart home products to determine integration paths. We built custom bridge hardware where necessary and developed a microservices architecture that could easily adapt to new devices and protocols as they entered the market.',
+    solution: 'We developed a full-stack IoT ecosystem including custom hardware bridges, a cloud backend for remote access and AI processing, and intuitive mobile and voice interfaces. The system features predictive automation based on user habits, sophisticated energy management, and enterprise-grade security protocols.',
+    results: [
+      '35% average reduction in energy costs for homeowners',
+      '95% customer satisfaction rating',
+      'Successfully integrated with 27 different third-party smart device brands',
+      'Achieved industry-leading security certification',
+      'Reduced false alarms by 78% compared to competitor systems'
+    ],
+    testimonial: {
+      content: 'This solution has transformed our product offering completely. Not only are we able to offer best-in-class smart home functionality, but the system actually learns and improves over time. The energy savings alone have been a major selling point for our luxury home developments.',
+      author: 'Jennifer Morgan',
+      role: 'CEO, SmartLiving Technologies'
+    },
+    gallery: [
+      'https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=2071&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=2070&auto=format&fit=crop'
+    ],
+    nextProject: 5
+  },
+  {
+    id: 5,
+    title: 'Enterprise Digital Transformation',
+    category: 'software',
+    image: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?q=80&w=2025&auto=format&fit=crop',
+    client: 'Global Logistics Corp',
+    completionDate: 'October 2023',
+    duration: '12 months',
+    industry: 'Logistics / Supply Chain',
+    technologies: ['React', 'Node.js', 'GraphQL', 'PostgreSQL', 'Kubernetes', 'Azure', 'Docker', 'Power BI'],
+    description: 'A comprehensive digital transformation initiative that replaced legacy systems with a modern, scalable microservices architecture to optimize global supply chain operations.',
+    challenge: 'Global Logistics was operating with 15+ disconnected legacy systems that were costly to maintain, prone to failures, and unable to provide real-time insights. Manual data entry was causing errors and delays, while integration limitations were preventing innovation.',
+    approach: 'We conducted a thorough systems audit and developed a phased migration strategy that allowed for continuous operations. Working closely with stakeholders across all departments, we prioritized features based on business impact and gradually replaced legacy components with modern microservices.',
+    solution: 'We developed a comprehensive cloud-native platform with real-time tracking, intelligent routing, predictive analytics, and seamless integration with partner systems. The solution included mobile apps for drivers, warehouse staff, and management, all connected to a central data platform.',
+    results: [
+      '67% reduction in operational IT costs',
+      '94% decrease in system downtime',
+      '43% improvement in delivery time accuracy',
+      'Real-time visibility across the entire supply chain',
+      'Ability to onboard new clients in hours instead of weeks'
+    ],
+    testimonial: {
+      content: 'This digital transformation has fundamentally changed how we operate. We've gone from fighting fires with our legacy systems to leveraging technology as a competitive advantage. The modular approach means we can continue to evolve without the pain of another massive overhaul.',
+      author: 'Thomas Wilson',
+      role: 'CIO, Global Logistics Corp'
+    },
+    gallery: [
+      'https://images.unsplash.com/photo-1593106584228-daa0a8ac44d1?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
+    ],
+    nextProject: 1
   }
 ];
 

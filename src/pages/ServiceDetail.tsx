@@ -1,8 +1,8 @@
 
 import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Check, Globe, Server, Code, Cpu, Shield, Database } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Check, Globe, Server, Code, Cpu, Shield, Database, Wifi } from 'lucide-react';
 import PageLayout from '../components/PageLayout';
-import { getServiceById } from '../utils/serviceData';
+import { getServiceById } from '../utils/services';
 
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -40,7 +40,7 @@ const ServiceDetail = () => {
       case 'ai-ml-solutions':
         return <Cpu className="h-6 w-6 text-blue-600 dark:text-blue-400" />;
       case 'iot-solutions':
-        return <Database className="h-6 w-6 text-blue-600 dark:text-blue-400" />;
+        return <Wifi className="h-6 w-6 text-blue-600 dark:text-blue-400" />;
       case 'cybersecurity':
         return <Shield className="h-6 w-6 text-blue-600 dark:text-blue-400" />;
       default:
@@ -167,7 +167,7 @@ const ServiceDetail = () => {
                     <h3 className="text-xl font-bold mb-3">{caseStudy.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">{caseStudy.description}</p>
                     <Link 
-                      to="#" 
+                      to="/case-studies/1" 
                       className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                     >
                       <span>Read full case study</span>
