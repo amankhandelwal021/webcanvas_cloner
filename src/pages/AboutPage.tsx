@@ -1,11 +1,17 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { getTeamMembers } from '../services';
 import PageLayout from '../components/PageLayout';
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  
+  const { data: teamMembers = [] } = useQuery({
+    queryKey: ['teamMembers'],
+    queryFn: getTeamMembers,
+  });
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,29 +43,6 @@ const AboutPage = () => {
     "User-centered design methodology"
   ];
 
-  const team = [
-    {
-      name: "Alex Johnson",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-    },
-    {
-      name: "Sarah Chen",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
-    },
-    {
-      name: "Miguel Santos",
-      role: "Lead Developer",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
-    },
-    {
-      name: "Lily Zhang",
-      role: "UX Designer",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
-    }
-  ];
-
   return (
     <PageLayout
       hero={{
@@ -78,7 +61,6 @@ const AboutPage = () => {
       >
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            {/* Image side */}
             <div className={`transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
             }`}>
@@ -96,7 +78,6 @@ const AboutPage = () => {
               </div>
             </div>
             
-            {/* Content side */}
             <div className={`transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}>
@@ -154,7 +135,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Values Section */}
       <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -203,7 +183,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -219,8 +198,8 @@ const AboutPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="group">
+            {teamMembers.map((member, index) => (
+              <div key={member.id} className="group">
                 <div className="rounded-xl overflow-hidden mb-4 relative">
                   <img 
                     src={member.image}
