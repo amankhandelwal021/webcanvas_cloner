@@ -65,7 +65,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-indigo-900 to-gray-900 min-h-screen overflow-hidden">
+    <div className="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen overflow-hidden">
       <Navbar />
       <main>
         <Hero />

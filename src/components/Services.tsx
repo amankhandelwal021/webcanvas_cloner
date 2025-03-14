@@ -45,7 +45,7 @@ const ServiceCard = ({ title, description, icon, delay, id }: ServiceCardProps) 
   return (
     <div
       ref={ref}
-      className={`group p-8 md:p-10 rounded-2xl border border-gray-100 dark:border-indigo-900/30 bg-white dark:bg-indigo-950/30 hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-500 ${
+      className={`group p-8 md:p-10 rounded-2xl border border-gray-100 dark:border-gray-800/30 bg-white dark:bg-slate-900/30 hover:border-blue-200 dark:hover:border-blue-900 transition-all duration-500 ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-10'
@@ -83,17 +83,17 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-20 md:py-32 bg-indigo-950/90"
+      className="py-20 md:py-32 bg-slate-100"
     >
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span className="inline-block bg-blue-900/40 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Services
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-slate-900">
             Comprehensive Software Solutions
           </h2>
-          <p className="mt-4 text-xl text-gray-300">
+          <p className="mt-4 text-xl text-slate-700">
             From website development to AI-powered applications, we deliver cutting-edge technology tailored to your business needs.
           </p>
         </div>

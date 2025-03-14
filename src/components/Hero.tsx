@@ -25,7 +25,7 @@ const Hero = () => {
           <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-with-connected-points-34493-large.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/80 to-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-800/90"></div>
       </div>
       
       <div className="container px-4 md:px-6 z-10">
@@ -35,14 +35,14 @@ const Hero = () => {
               isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
             }`}
           >
-            <span className="inline-block bg-indigo-500/40 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
+            <span className="inline-block bg-blue-500/40 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
               Award-Winning Digital Agency
             </span>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight md:leading-tight text-white">
               <span className="relative">
                 Creating exceptional
-                <span className="block text-gradient-primary bg-gradient-to-r from-indigo-300 via-purple-300 to-blue-300 bg-clip-text text-transparent">digital experiences</span>
+                <span className="block bg-gradient-to-r from-blue-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent">digital experiences</span>
               </span>
             </h1>
             
@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in delay-300">
               <a 
                 href="#projects" 
-                className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
+                className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
                   View Our Work 
@@ -63,7 +63,7 @@ const Hero = () => {
               
               <a 
                 href="#contact" 
-                className="px-8 py-4 border border-indigo-400/60 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-indigo-400 hover:bg-indigo-500/40 w-full sm:w-auto"
+                className="px-8 py-4 border border-white/60 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-white hover:bg-white/10 w-full sm:w-auto"
               >
                 Start a Project
               </a>
