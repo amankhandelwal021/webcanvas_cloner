@@ -1,4 +1,3 @@
-
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Users, CheckCircle, ArrowRight, Code, Layers, Globe } from 'lucide-react';
 import PageLayout from '../components/PageLayout';
@@ -85,7 +84,7 @@ const caseStudies: CaseStudy[] = [
       'ROI of 312% in the first year of implementation'
     ],
     testimonial: {
-      content: 'This predictive maintenance system has revolutionized our operations. We've gone from reactive to proactive, addressing potential issues before they cause downtime. The solution has more than paid for itself in prevented losses and operational improvements.',
+      content: 'This predictive maintenance system has revolutionized our operations. We\'ve gone from reactive to proactive, addressing potential issues before they cause downtime. The solution has more than paid for itself in prevented losses and operational improvements.',
       author: 'Michael Rodriguez',
       role: 'VP of Operations, IndustrialTech Manufacturing'
     },
@@ -141,7 +140,7 @@ const caseStudies: CaseStudy[] = [
     industry: 'Real Estate / Smart Home',
     technologies: ['Arduino', 'Raspberry Pi', 'MQTT', 'Node.js', 'React', 'AWS IoT', 'TensorFlow Lite'],
     description: 'A comprehensive smart home ecosystem allowing homeowners to control, monitor, and automate every aspect of their living environment through a unified mobile and voice interface.',
-    challenge: 'SmartLiving Technologies wanted to create a unified smart home solution that would integrate with existing devices while providing enhanced security, energy efficiency, and convenience features that weren't available in fragmented consumer solutions.',
+    challenge: 'SmartLiving Technologies wanted to create a unified smart home solution that would integrate with existing devices while providing enhanced security, energy efficiency, and convenience features that weren\'t available in fragmented consumer solutions.',
     approach: 'We began with extensive compatibility testing of existing smart home products to determine integration paths. We built custom bridge hardware where necessary and developed a microservices architecture that could easily adapt to new devices and protocols as they entered the market.',
     solution: 'We developed a full-stack IoT ecosystem including custom hardware bridges, a cloud backend for remote access and AI processing, and intuitive mobile and voice interfaces. The system features predictive automation based on user habits, sophisticated energy management, and enterprise-grade security protocols.',
     results: [
@@ -185,7 +184,7 @@ const caseStudies: CaseStudy[] = [
       'Ability to onboard new clients in hours instead of weeks'
     ],
     testimonial: {
-      content: 'This digital transformation has fundamentally changed how we operate. We've gone from fighting fires with our legacy systems to leveraging technology as a competitive advantage. The modular approach means we can continue to evolve without the pain of another massive overhaul.',
+      content: 'This digital transformation has fundamentally changed how we operate. We\'ve gone from fighting fires with our legacy systems to leveraging technology as a competitive advantage. The modular approach means we can continue to evolve without the pain of another massive overhaul.',
       author: 'Thomas Wilson',
       role: 'CIO, Global Logistics Corp'
     },
@@ -430,7 +429,7 @@ const CaseStudyDetail = () => {
         <div className="container px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to start your project?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Let's collaborate to create innovative solutions that drive results for your business.
+            Let&apos;s collaborate to create innovative solutions that drive results for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
