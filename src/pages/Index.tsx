@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -66,7 +65,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gray-950 min-h-screen overflow-hidden">
+    <div className="bg-gradient-to-b from-gray-900 to-indigo-950 min-h-screen overflow-hidden">
       <Navbar />
       <main>
         <Hero />

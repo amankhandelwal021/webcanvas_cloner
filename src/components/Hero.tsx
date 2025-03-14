@@ -14,39 +14,46 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-40"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-blue-950 dark:to-black opacity-60 -z-10"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0 -z-10">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-with-connected-points-34493-large.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/70 to-black/80"></div>
+      </div>
       
-      {/* Background grid pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMTIxMjEiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgMHYyaC0ydi0yaDJ6bTIgMGgydjJoLTJ2LTJ6bS0yLTR2Mmgtdj'+
-        'YtMmjMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50 -z-10" />
-
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 z-10">
         <div className="flex flex-col items-center text-center space-y-12">
           <div 
             className={`space-y-4 max-w-5xl transition-all duration-1000 ${
               isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
             }`}
           >
-            <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+            <span className="inline-block bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
               Award-Winning Digital Agency
             </span>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight md:leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight md:leading-tight text-white">
               <span className="relative">
                 Creating exceptional
-                <span className="block text-blue-600">digital experiences</span>
+                <span className="block text-gradient-primary bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">digital experiences</span>
               </span>
             </h1>
             
-            <p className="mt-8 max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in opacity-90">
+            <p className="mt-8 max-w-3xl mx-auto text-xl text-gray-300 leading-relaxed animate-fade-in opacity-90">
               We craft innovative digital products and experiences that connect brands with their audience in meaningful ways.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in delay-300">
               <a 
                 href="#projects" 
-                className="group px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
+                className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
                   View Our Work 
@@ -56,7 +63,7 @@ const Hero = () => {
               
               <a 
                 href="#contact" 
-                className="px-8 py-4 border border-gray-300 dark:border-gray-700 rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-blue-500 hover:text-blue-500 w-full sm:w-auto"
+                className="px-8 py-4 border border-indigo-400/30 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-indigo-400 hover:bg-indigo-500/20 w-full sm:w-auto"
               >
                 Start a Project
               </a>
@@ -67,12 +74,12 @@ const Hero = () => {
           <div className={`w-full max-w-5xl mt-20 transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
           }`}>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6">
+            <p className="text-sm font-medium text-indigo-200/60 mb-6">
               TRUSTED BY INNOVATIVE COMPANIES
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-70">
               {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="h-8 w-24 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                <div key={i} className="h-8 w-24 bg-indigo-400/20 dark:bg-indigo-300/10 rounded animate-pulse"></div>
               ))}
             </div>
           </div>
@@ -81,8 +88,8 @@ const Hero = () => {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex justify-center pt-1">
-          <div className="w-1.5 h-2.5 bg-gray-400 dark:bg-gray-600 rounded-full animate-float"></div>
+        <div className="w-6 h-10 rounded-full border-2 border-indigo-300/30 flex justify-center pt-1">
+          <div className="w-1.5 h-2.5 bg-indigo-300/70 rounded-full animate-float"></div>
         </div>
       </div>
     </section>
