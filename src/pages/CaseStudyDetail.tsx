@@ -4,22 +4,24 @@ import { ArrowLeft, Calendar, Users, CheckCircle, ArrowRight, Code, Layers, Glob
 import { useQuery } from '@tanstack/react-query';
 import { getCaseStudyById } from '../services';
 import PageLayout from '../components/PageLayout';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CaseStudy } from '../types';
 
 const CaseStudyDetail = () => {
   const { caseStudyId } = useParams<{ caseStudyId: string }>();
   const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(null);
 
-  const { isLoading, error } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['caseStudy', caseStudyId],
     queryFn: () => getCaseStudyById(Number(caseStudyId)),
-    onSuccess: (data) => {
-      if (data) {
-        setCaseStudy(data);
-      }
-    },
   });
+
+  // Use useEffect to update state when data changes
+  useEffect(() => {
+    if (data) {
+      setCaseStudy(data);
+    }
+  }, [data]);
 
   if (isLoading) {
     return (

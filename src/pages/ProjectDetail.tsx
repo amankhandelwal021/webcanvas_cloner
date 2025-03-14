@@ -4,22 +4,24 @@ import { ArrowLeft, Calendar, Users, CheckCircle, ArrowRight, Code, Layers, Glob
 import { useQuery } from '@tanstack/react-query';
 import { getProjectById } from '../services';
 import PageLayout from '../components/PageLayout';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Project } from '../types';
 
 const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const [project, setProject] = useState<Project | null>(null);
 
-  const { isLoading, error } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['project', projectId],
     queryFn: () => getProjectById(Number(projectId)),
-    onSuccess: (data) => {
-      if (data) {
-        setProject(data);
-      }
-    },
   });
+
+  // Use useEffect to update state when data changes
+  useEffect(() => {
+    if (data) {
+      setProject(data);
+    }
+  }, [data]);
 
   if (isLoading) {
     return (
@@ -51,7 +53,7 @@ const ProjectDetail = () => {
         }}
       >
         <div className="py-20 md:py-32 text-center">
-          <p>The project you are looking for doesn't exist or has been moved.</p>
+          <p>The project you are looking for doesn&apos;t exist or has been moved.</p>
         </div>
       </PageLayout>
     );
