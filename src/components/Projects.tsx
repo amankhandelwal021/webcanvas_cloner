@@ -99,17 +99,17 @@ const Projects = () => {
     <section 
       id="projects" 
       ref={ref}
-      className="py-20 md:py-32"
+      className="py-20 md:py-32 bg-gray-900"
     >
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-indigo-900/40 text-indigo-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Our Projects
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white">
             Recent work we're proud of
           </h2>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          <p className="mt-4 text-xl text-gray-300">
             Explore our portfolio of innovative digital solutions.
           </p>
         </div>
@@ -123,7 +123,7 @@ const Projects = () => {
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeFilter === filter.value
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
               {filter.label}
@@ -155,10 +155,10 @@ const Projects = () => {
                     className="w-full h-80 object-cover img-zoom"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="text-white text-2xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-white/80 mb-3">{project.description}</p>
+                    <p className="text-white/90 mb-3">{project.description}</p>
                     <span className="text-blue-300 text-sm uppercase tracking-wider">{filters.find(f => f.value === project.category)?.label}</span>
                   </div>
                 </div>

@@ -25,13 +25,13 @@ interface PageLayoutProps {
 
 const PageLayout = ({ children, hero }: PageLayoutProps) => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-indigo-950 min-h-screen overflow-hidden">
+    <div className="bg-gradient-to-b from-indigo-900 to-gray-900 min-h-screen overflow-hidden">
       <Navbar />
       <main>
         {/* Hero Section for all pages */}
         <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20 pb-20">
           {/* Background gradient and overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/40 to-gray-900/80 -z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/60 to-gray-900/90 -z-10"></div>
           
           {/* Background pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMTIxMjEiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgMHYyaC0ydi0yaDJ6bTIgMGgydjJoLTJ2LTJ6bS0yLTR2Mmgtdv'+
@@ -40,7 +40,7 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-8">
               <div className="space-y-4 max-w-5xl transition-all duration-1000 opacity-100">
-                <span className="inline-block bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
+                <span className="inline-block bg-indigo-500/40 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
                   {hero.badge}
                 </span>
                 
@@ -68,7 +68,7 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
                     {hero.secondaryCta && (
                       <a 
                         href={hero.secondaryCta.link} 
-                        className="px-8 py-4 border border-indigo-400/30 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-indigo-400 hover:bg-indigo-500/20 w-full sm:w-auto"
+                        className="px-8 py-4 border border-indigo-400/60 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-indigo-400 hover:bg-indigo-500/40 w-full sm:w-auto"
                       >
                         {hero.secondaryCta.text}
                       </a>

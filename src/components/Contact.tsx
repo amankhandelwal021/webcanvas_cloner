@@ -61,19 +61,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+      icon: <Mail className="w-5 h-5 text-blue-400" />,
       title: 'Email Us',
       content: 'hello@designowe.com',
       link: 'mailto:hello@designowe.com'
     },
     {
-      icon: <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+      icon: <Phone className="w-5 h-5 text-blue-400" />,
       title: 'Call Us',
       content: '+1 (555) 123-4567',
       link: 'tel:+15551234567'
     },
     {
-      icon: <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
+      icon: <MapPin className="w-5 h-5 text-blue-400" />,
       title: 'Visit Us',
       content: '123 Design Street, Creative City',
       link: 'https://maps.google.com'
@@ -84,17 +84,17 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={ref}
-      className="py-20 md:py-32"
+      className="py-20 md:py-32 bg-gray-900"
     >
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-blue-900/40 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Get In Touch
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white">
             Let's bring your ideas to life
           </h2>
-          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          <p className="mt-4 text-xl text-gray-300">
             Have a project in mind? We'd love to hear about it.
           </p>
         </div>
@@ -104,28 +104,28 @@ const Contact = () => {
             <a
               href={info.link}
               key={index}
-              className={`p-8 bg-white dark:bg-gray-800/80 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 text-center ${
+              className={`p-8 bg-indigo-950/30 rounded-xl border border-indigo-900/30 shadow-sm hover:shadow-md transition-all duration-300 text-center ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="mx-auto w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-blue-900/20 rounded-full mb-4">
+              <div className="mx-auto w-12 h-12 flex items-center justify-center bg-blue-900/40 rounded-full mb-4">
                 {info.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2">{info.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{info.content}</p>
+              <h3 className="text-lg font-bold mb-2 text-white">{info.title}</h3>
+              <p className="text-gray-300">{info.content}</p>
             </a>
           ))}
         </div>
         
-        <div className={`bg-white dark:bg-gray-800/80 rounded-2xl shadow-xl overflow-hidden transition-all duration-1000 ${
+        <div className={`bg-indigo-950/30 rounded-2xl shadow-xl overflow-hidden transition-all duration-1000 border border-indigo-900/30 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="grid md:grid-cols-2">
             {/* Map or image side */}
-            <div className="h-64 md:h-full bg-gray-200 dark:bg-gray-700">
+            <div className="h-64 md:h-full bg-indigo-900/20">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.0975835171787!2d-73.99!3d40.74!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzI0LjAiTiA3M8KwNTknMjQuMCJX!5e0!3m2!1sen!2sus!4v1625761840566!5m2!1sen!2sus"
                 width="100%"
@@ -139,11 +139,11 @@ const Contact = () => {
             
             {/* Form side */}
             <div className="p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Send us a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                     Full Name
                   </label>
                   <input
@@ -153,13 +153,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     placeholder="John Doe"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                     Email Address
                   </label>
                   <input
@@ -169,13 +169,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     placeholder="john@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
                     Subject
                   </label>
                   <input
@@ -185,13 +185,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     placeholder="Project Inquiry"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
                     Message
                   </label>
                   <textarea
@@ -201,7 +201,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>

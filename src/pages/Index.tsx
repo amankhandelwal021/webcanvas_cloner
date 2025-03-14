@@ -1,5 +1,5 @@
+
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
@@ -65,7 +65,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-indigo-950 min-h-screen overflow-hidden">
+    <div className="bg-gradient-to-b from-indigo-900 to-gray-900 min-h-screen overflow-hidden">
       <Navbar />
       <main>
         <Hero />
