@@ -12,6 +12,7 @@ export interface Service {
   caseStudies?: {
     title: string;
     description: string;
+    slug?: string
     image?: string;
   }[];
   technologies?: string[];

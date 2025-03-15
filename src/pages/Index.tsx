@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -8,6 +7,11 @@ import Projects from '../components/Projects';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FooterInfo from '../components/FooterInfo';
+import Awards from '@/components/Awards';
+import Clients from '@/components/Clients';
+import Testimonials from '../components/Testimonials';
+import Innovations from '../components/Innovations';
 
 const Index = () => {
   // This effect enables smooth scrolling for anchor links
@@ -70,9 +74,13 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Services />
         <Projects />
-        <About />
+        <Innovations />
+        <Awards />
+        <Clients />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

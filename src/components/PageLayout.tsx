@@ -3,6 +3,8 @@ import { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { ArrowRight } from 'lucide-react';
+import Contact from './Contact';
+import Awards from './Awards';
 
 interface PageHeroProps {
   title: string;
@@ -47,7 +49,7 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight md:leading-tight">
                   <span className="relative">
                     {hero.title}
-                    <span className="block text-blue-600">{hero.subtitle}</span>
+                    <span className="block text-blue-600 mt-5">{hero.subtitle}</span>
                   </span>
                 </h1>
                 
@@ -56,7 +58,7 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
                     {hero.primaryCta && (
                       <a 
                         href={hero.primaryCta.link} 
-                        className="group px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
+                        className="group px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto mt-4"
                       >
                         <span className="flex items-center justify-center">
                           {hero.primaryCta.text} 
@@ -82,6 +84,8 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
         
         {children}
       </main>
+      <Contact />
+      <Awards />
       <Footer />
     </div>
   );
