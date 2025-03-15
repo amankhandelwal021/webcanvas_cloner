@@ -146,7 +146,7 @@ const ServiceDetail = () => {
       )}
 
       {/* Case Studies Section */}
-      {service.caseStudies && service.caseStudies.length > 0 && (
+      {/* {service.caseStudies && service.caseStudies.length > 0 && (
         <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
           <div className="container px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-12 text-center">Case Studies</h2>
@@ -167,7 +167,7 @@ const ServiceDetail = () => {
                     <h3 className="text-xl font-bold mb-3">{caseStudy.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">{caseStudy.description}</p>
                     <Link 
-                      to="/case-studies/1" 
+                      to={`/case-studies/${caseStudy.slug}`}
                       className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                     >
                       <span>Read full case study</span>
@@ -179,7 +179,7 @@ const ServiceDetail = () => {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* Our Process Section */}
       <section className="py-16 md:py-24 bg-white dark:bg-black">
@@ -233,7 +233,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 md:py-24 bg-blue-600 dark:bg-blue-900 text-white">
+      {/* <section className="py-16 md:py-24 bg-blue-600 dark:bg-blue-900 text-white">
         <div className="container px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-4xl font-display font-bold mb-6">Ready to transform your business?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
@@ -260,7 +260,7 @@ const ServiceDetail = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 };

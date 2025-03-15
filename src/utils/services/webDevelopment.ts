@@ -39,16 +39,19 @@ export const webDevelopmentService: Service = {
   caseStudies: [
     {
       title: 'E-commerce Platform Redesign',
+      slug: 'ecommerce-platform-redesign',
       description: 'Increased conversions by 45% through optimized checkout process and improved mobile experience.',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
     },
     {
       title: 'SaaS Application Development',
+      slug: 'saas-application-development',
       description: 'Built a scalable web application with real-time collaboration features serving over 10,000 daily users.',
       image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop'
     },
     {
       title: 'Healthcare Portal System',
+      slug: 'healthcare-portal-system',
       description: 'Developed a secure, HIPAA-compliant healthcare portal that improved patient engagement by 60% and streamlined administrative workflows.',
       image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop'
     }

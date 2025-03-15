@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Star, Users, Calendar, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
+import { getProjects } from '@/utils/projects';
 
 interface Project {
   id: number;
@@ -34,107 +35,7 @@ const ProjectsPage = () => {
     { value: 'ai', label: 'AI & ML' },
   ];
   
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: 'Modern E-commerce Platform',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/1',
-      client: 'FashionBrand Inc.',
-      completionDate: 'June 2023',
-      technologies: ['React', 'Node.js', 'MongoDB', 'AWS'],
-      description: 'A complete e-commerce solution with integrated payment processing, inventory management, and customer analytics.'
-    },
-    {
-      id: 2,
-      title: 'Financial App UI Design',
-      category: 'mobile',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/2',
-      client: 'Capital Finance',
-      completionDate: 'August 2023',
-      technologies: ['React Native', 'Firebase', 'Stripe API'],
-      description: 'Mobile banking application with intuitive investment tracking and portfolio management features.'
-    },
-    {
-      id: 3,
-      title: 'Tech Startup Branding',
-      category: 'branding',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/3',
-      client: 'NextGen Tech',
-      completionDate: 'March 2023',
-      technologies: ['Adobe Creative Suite', 'Brand Strategy'],
-      description: 'Complete brand identity development including logo, brand guidelines, marketing materials, and website design.'
-    },
-    {
-      id: 4,
-      title: 'Healthcare Dashboard',
-      category: 'web',
-      image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/4',
-      client: 'MediCare Solutions',
-      completionDate: 'October 2023',
-      technologies: ['Angular', 'D3.js', 'Express', 'PostgreSQL'],
-      description: 'Analytics dashboard for healthcare providers to monitor patient outcomes and operational efficiency metrics.'
-    },
-    {
-      id: 5,
-      title: 'Food Delivery App',
-      category: 'mobile',
-      image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/5',
-      client: 'Urban Eats',
-      completionDate: 'December 2023',
-      technologies: ['Flutter', 'Firebase', 'Google Maps API'],
-      description: 'Cross-platform food delivery application with real-time order tracking and restaurant management features.'
-    },
-    {
-      id: 6,
-      title: 'Luxury Brand Identity',
-      category: 'branding',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/6',
-      client: 'Elegance Jewelry',
-      completionDate: 'February 2024',
-      technologies: ['Brand Strategy', 'Packaging Design', 'Web Design'],
-      description: 'Premium brand identity system with bespoke packaging and omnichannel customer experience design.'
-    },
-    {
-      id: 7,
-      title: 'Inventory Management System',
-      category: 'software',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/7',
-      client: 'Global Manufacturing Co.',
-      completionDate: 'November 2023',
-      technologies: ['.NET Core', 'SQL Server', 'Power BI', 'Azure'],
-      description: 'Custom enterprise software for tracking inventory across multiple warehouses with advanced reporting.'
-    },
-    {
-      id: 8,
-      title: 'Customer Sentiment Analysis',
-      category: 'ai',
-      image: 'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/8',
-      client: 'RetailGiant Inc.',
-      completionDate: 'January 2024',
-      technologies: ['Python', 'TensorFlow', 'BERT', 'AWS SageMaker'],
-      description: 'ML solution that analyzes customer reviews and social media mentions to identify trends and opportunities.'
-    },
-    {
-      id: 9,
-      title: 'Supply Chain Optimization',
-      category: 'software',
-      image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop',
-      url: '/projects/9',
-      client: 'LogisticsPro',
-      completionDate: 'March 2024',
-      technologies: ['Python', 'OR-Tools', 'React', 'Node.js'],
-      description: 'AI-powered system that optimizes delivery routes and warehouse operations, reducing costs by 23%.'
-    }
-  ];
+  const projects = getProjects();
 
   const featuredProjects = projects.slice(0, 3);
   
@@ -298,7 +199,7 @@ const ProjectsPage = () => {
                     )}
                   </div>
                   <Link 
-                    to={project.url} 
+                    to={project.slug} 
                     className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300"
                   >
                     View case study
@@ -352,7 +253,7 @@ const ProjectsPage = () => {
           >
             {filteredProjects.map((project, index) => (
               <Link
-                to={project.url}
+                to={project.slug}
                 key={project.id}
                 className={`group overflow-hidden rounded-xl transition-all duration-700 delay-${index * 100} ${
                   isVisible 
@@ -495,7 +396,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-blue-600 dark:bg-blue-900 text-white">
+      {/* <section className="py-20 md:py-32 bg-blue-600 dark:bg-blue-900 text-white">
         <div className="container px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to start your project?</h2>
@@ -518,7 +419,7 @@ const ProjectsPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 };

@@ -15,15 +15,15 @@ import { iotSolutionsService } from './iotSolutions';
 // Combine all services into a single array
 export const services: Service[] = [
   webDevelopmentService,
-  uiUxDesignService,
+  mobileAppDevelopmentService,
+  ecommerceSolutionsService,
+  customSoftwareDevelopmentService,
+  aiMlSolutionsService,
+  cybersecurityService,
   digitalMarketingService,
   analyticsInsightsService,
   cloudSolutionsService,
-  ecommerceSolutionsService,
-  cybersecurityService,
-  mobileAppDevelopmentService,
-  customSoftwareDevelopmentService,
-  aiMlSolutionsService,
+  uiUxDesignService,
   iotSolutionsService
 ];
 

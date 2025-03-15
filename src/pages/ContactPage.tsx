@@ -16,7 +16,7 @@ const ContactPage = () => {
       }}
     >
       <div id="contact-form">
-        <Contact />
+        {/* <Contact /> */}
       </div>
     </PageLayout>
   );

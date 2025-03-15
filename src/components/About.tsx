@@ -54,7 +54,7 @@ const About = () => {
               
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" 
                   alt="Our team collaborating" 
                   className="w-full h-auto object-cover aspect-[4/3]"
                 />

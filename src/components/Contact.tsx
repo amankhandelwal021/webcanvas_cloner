@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
@@ -9,8 +8,12 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    phone: '',
+    budget: '',
+    help: '',
+    message: '',
+    verification: '',
+    nda: false,
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,12 +36,14 @@ const Contact = () => {
       if (ref.current) {
         observer.unobserve(ref.current);
       }
-    };
+    };  
   }, []);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const handleChange = (e: any) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
   };
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -52,8 +57,12 @@ const Contact = () => {
       setFormData({
         name: '',
         email: '',
-        subject: '',
-        message: ''
+        phone: '',
+        budget: '',
+        help: '',
+        message: '',
+        verification: '',
+        nda: false,
       });
       // Normally you would submit to a backend here
     }, 1500);
@@ -69,13 +78,13 @@ const Contact = () => {
     {
       icon: <Phone className="w-5 h-5 text-blue-400" />,
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      content: '+91 9261638242',
+      link: 'tel:+919261638242'
     },
     {
       icon: <MapPin className="w-5 h-5 text-blue-400" />,
       title: 'Visit Us',
-      content: '123 Design Street, Creative City',
+      content: '44/7, U-Block, DLF Phase 3, Cyber City, Gurgaon, Haryana, India',
       link: 'https://maps.google.com'
     }
   ];
@@ -91,8 +100,8 @@ const Contact = () => {
           <span className="inline-block bg-blue-900/40 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             Get In Touch
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white">
-            Let's bring your ideas to life
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight">
+            Let's chat about Dreams & Amazing ideas
           </h2>
           <p className="mt-4 text-xl text-gray-300">
             Have a project in mind? We'd love to hear about it.
@@ -142,57 +151,99 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-6 text-white">Send us a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
-                    placeholder="John Doe"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Full Name*
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Email*
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Phone Number*
+                    </label>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      placeholder="+1 234 567 890"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Select Budget
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    >
+                      <option value="">Select Budget</option>
+                      <option value="under-10k">Under $10k</option>
+                      <option value="10k-50k">$10k - $50k</option>
+                      <option value="50k-100k">$50k - $100k</option>
+                      <option value="over-100k">Over $100k</option>
+                    </select>
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                    Email Address
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Where do you need help?
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
-                    placeholder="john@example.com"
-                  />
+                  <div className="flex flex-wrap gap-4">
+                    {['Internet of Things', 'Augmented Reality', 'Artificial Intelligence', 'Data Intelligence', 'Interactive Tech', 'Virtual Reality'].map((option) => (
+                      <label key={option} className="flex items-center">
+                        <input
+                          type="radio"
+                          name="help"
+                          value={option}
+                          checked={formData.help === option}
+                          onChange={handleChange}
+                          className="form-radio text-blue-600 dark:text-blue-400"
+                        />
+                        <span className="ml-2 text-gray-700 dark:text-gray-300">{option}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
-                    placeholder="Project Inquiry"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                    Message
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    How Can We Help?
                   </label>
                   <textarea
                     id="message"
@@ -200,10 +251,39 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-indigo-900/50 bg-indigo-900/20 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors placeholder-gray-500"
+                    rows={2}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                     placeholder="Tell us about your project..."
                   ></textarea>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div>
+                    <label htmlFor="verification" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Please verify that you are a human.
+                    </label>
+                    <input
+                      type="text"
+                      id="verification"
+                      name="verification"
+                      value={formData.verification}
+                      onChange={handleChange}
+                      required
+                      className="w-24 px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      placeholder="6 * 1 ="
+                    />
+                  </div>
+                  
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="nda"
+                      checked={formData.nda}
+                      onChange={handleChange}
+                      className="form-checkbox text-blue-600 dark:text-blue-400"
+                    />
+                    <span className="ml-2 text-gray-700 dark:text-gray-300">Send me an NDA</span>
+                  </label>
                 </div>
                 
                 <button
@@ -220,10 +300,7 @@ const Contact = () => {
                       Sending...
                     </span>
                   ) : (
-                    <span className="flex items-center">
-                      Send Message
-                      <Send className="ml-2 w-4 h-4" />
-                    </span>
+                    <span>Submit</span>
                   )}
                 </button>
               </form>
