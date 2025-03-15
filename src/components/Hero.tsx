@@ -52,8 +52,8 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in delay-300">
               <a 
-                href="#projects" 
-                className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
+                href="/projects" 
+                className="group px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-md font-medium transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
                   View Our Work 
@@ -62,8 +62,8 @@ const Hero = () => {
               </a>
               
               <a 
-                href="#contact" 
-                className="px-8 py-4 border border-white/60 backdrop-blur-sm text-white rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-white hover:bg-white/10 w-full sm:w-auto"
+                href="/contact" 
+                className="px-8 py-4 border border-gray-300 dark:border-gray-700 rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:border-blue-500 hover:text-blue-500 w-full sm:w-auto"
               >
                 Start a Project
               </a>

@@ -6,6 +6,7 @@ import { getProjectById } from '../services';
 import PageLayout from '../components/PageLayout';
 import { useState, useEffect } from 'react';
 import { Project } from '../types';
+import { getProjectBySlug } from '@/utils/projects';
 
 const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -13,7 +14,7 @@ const ProjectDetail = () => {
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['project', projectId],
-    queryFn: () => getProjectById(Number(projectId)),
+    queryFn: () => getProjectBySlug(projectId),
   });
 
   // Use useEffect to update state when data changes
@@ -274,7 +275,7 @@ const ProjectDetail = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-blue-600 dark:bg-blue-900 text-white">
+      {/* <section className="py-20 md:py-32 bg-blue-600 dark:bg-blue-900 text-white">
         <div className="container px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to start your project?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
@@ -295,7 +296,7 @@ const ProjectDetail = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 };

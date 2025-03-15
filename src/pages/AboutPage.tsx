@@ -183,7 +183,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
@@ -214,7 +214,7 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 };
