@@ -93,7 +93,7 @@ const   Footer = () => {
             {/* Column 1 - About */}
             <div className="md:col-span-1">
               <a href="#home" className="text-2xl font-display font-bold tracking-tight mb-6 inline-block">
-                design<span className="text-blue-500">owe</span>
+                code<span className="text-blue-500">horizon</span>
               </a>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                 We create exceptional digital experiences that connect brands with their audience in meaningful ways.
@@ -146,8 +146,8 @@ const   Footer = () => {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <Mail className="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0" />
-                  <a href="mailto:hello@designowe.com" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    hello@designowe.com
+                  <a href="mailto:info@codehorizon.in" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    info@codehorizon.in
                   </a>
                 </li>
                 <li className="flex items-start">
@@ -169,7 +169,7 @@ const   Footer = () => {
           {/* Bottom bar */}
           <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} designowe. All rights reserved.
+              © {new Date().getFullYear()} techhorizon. All rights reserved.
             </p>
 
             <button

@@ -72,8 +72,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
       title: 'Email Us',
-      content: 'hello@designowe.com',
-      link: 'mailto:hello@designowe.com'
+      content: 'info@codehorizon.in',
+      link: 'mailto:info@codehorizon.in'
     },
     {
       icon: <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
@@ -136,7 +136,7 @@ const Contact = () => {
             {/* Map or image side */}
             <div className="h-64 md:h-full bg-gray-200 dark:bg-gray-700">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.0975835171787!2d-73.99!3d40.74!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzI0LjAiTiA3M8KwNTknMjQuMCJX!5e0!3m2!1sen!2sus!4v1625761840566!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.0975835171787!2d77.0895!3d28.4950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjguNDk1MCwgNzcuMDg5NQ!5e0!3m2!1sen!2sus!4v1625761840566!5m2!1sen!2sus" 
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -225,7 +225,7 @@ const Contact = () => {
                     Where do you need help?
                   </label>
                   <div className="flex flex-wrap gap-4">
-                    {['Internet of Things', 'Augmented Reality', 'Artificial Intelligence', 'Data Intelligence', 'Interactive Tech', 'Virtual Reality'].map((option) => (
+                    {['Web Development', 'Mobile Development', 'AI/ML Solutions', 'Custom Software Development', 'E-commerce Solutions'].map((option) => (
                       <label key={option} className="flex items-center">
                         <input
                           type="radio"

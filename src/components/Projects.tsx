@@ -34,7 +34,7 @@ const Projects = () => {
               key={project.id}
               className={`${project.fullWidth ? 'md:col-span-2 lg:col-span-3' : ''} rounded-lg overflow-hidden shadow-lg`}
             >
-              <div className={`${project.bgColor} p-6 md:p-8 text-white relative`}>
+              <div className={`${project.bgColor} p-6 md:p-8 relative`}>
                 {project.fullWidth ? (
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">

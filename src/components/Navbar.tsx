@@ -37,7 +37,7 @@ const Navbar = () => {
           to="/" 
           className="text-2xl font-display font-bold tracking-tight"
         >
-          design<span className="text-blue-500">owe</span>
+          code<span className="text-blue-500">horizon</span>
         </Link>
         
         {/* Desktop Navigation */}

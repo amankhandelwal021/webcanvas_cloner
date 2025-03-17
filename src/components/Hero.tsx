@@ -29,18 +29,18 @@ const Hero = () => {
             }`}
           >
             <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
-              Award-Winning Digital Agency
+            Leading Digital Solutions Provider
             </span>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight md:leading-tight">
               <span className="relative">
-                Creating exceptional
-                <span className="block text-blue-600">digital experiences</span>
+              Empowering Businesses 
+                <span className="block text-blue-600">with Next-Gen Digital Solutions</span>
               </span>
             </h1>
             
             <p className="mt-8 max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in opacity-90">
-              We craft innovative digital products and experiences that connect brands with their audience in meaningful ways.
+            We create innovative and scalable web and mobile solutions, leveraging Artificial Intelligence, Machine Learning, IoT, and Generative AI. Our expertise drives digital transformation and accelerates business growth worldwide.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in delay-300">

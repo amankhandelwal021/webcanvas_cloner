@@ -4,35 +4,35 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      text: "Designoweb has been an exceptional partner in creating Pharmatop, delivering a secure, intuitive platform that streamlines enrolling, paying, and engaging with medical courses. Their commitment to quality has been invaluable in providing resources for healthcare professionals.",
+      text: "Code Horizon has been an exceptional partner in creating Pharmatop, delivering a secure, intuitive platform that streamlines enrolling, paying, and engaging with medical courses. Their commitment to quality has been invaluable in providing resources for healthcare professionals.",
       name: "Vesna Marijanović Jukić",
       position: "CEO at PharmaTop",
       image: "https://img.freepik.com/free-photo/brunette-businesswoman-showing-her-tablet_23-2148142790.jpg?uid=R47973407&ga=GA1.1.1009564255.1740590430&semt=ais_hybrid" // Update with the correct path
     },
     {
       id: 2,
-      text: "Designoweb brought our ArcX vision to life by integrating Smart Ring technology and creating AI-powered playlists tailored to users' moods and activities. Their innovation exceeded expectations, delivering an app that empowers fitness goals. We're thrilled with the collaboration!",
+      text: "Code Horizon brought our ArcX vision to life by integrating Smart Ring technology and creating AI-powered playlists tailored to users' moods and activities. Their innovation exceeded expectations, delivering an app that empowers fitness goals. We're thrilled with the collaboration!",
       name: "Paul Blair",
       position: "CEO at ArcX",
       image: "https://img.freepik.com/free-photo/portrait-confident-young-businessman-with-his-arms-crossed_23-2148176206.jpg?uid=R47973407&ga=GA1.1.1009564255.1740590430&semt=ais_hybrid" // Update with the correct path
     },
     {
       id: 3,
-      text: "Working with Designoweb on Hollywood Hair was fantastic. They understood our vision for AI-driven beauty and executed it flawlessly. From ideation to launch, their expertise ensured a smooth, personalized user experience, making Hollywood Hair a standout in the beauty industry!",
+      text: "Working with Code Horizon on Hollywood Hair was fantastic. They understood our vision for AI-driven beauty and executed it flawlessly. From ideation to launch, their expertise ensured a smooth, personalized user experience, making Hollywood Hair a standout in the beauty industry!",
       name: "Klaudia Duszyńska",
       position: "CEO at Hollywood Hair",
       image: "https://img.freepik.com/free-photo/medium-shaot-woman-standing-office-with-her-hands-folded_1098-20025.jpg?uid=R47973407&ga=GA1.1.1009564255.1740590430&semt=ais_hybrid " // Update with the correct path
     },
     {
       id: 4,
-      text: "Designoweb's expertise in creating a seamless, user-friendly platform for our AI-powered music app was outstanding. Their dedication to quality and user experience made the project a success!",
+      text: "Code Horizon's expertise in creating a seamless, user-friendly platform for our AI-powered music app was outstanding. Their dedication to quality and user experience made the project a success!",
       name: "Linda Ball",
       position: "CEO at Upcycled Medical",
       image: "https://img.freepik.com/free-photo/high-angle-beautiful-business-female_23-2148411859.jpg?uid=R47973407&ga=GA1.1.1009564255.1740590430&semt=ais_hybrid" // Update with the correct path
     },
     {
       id: 5,
-      text: "Designoweb's expertise in creating a seamless, user-friendly platform for our AI-powered music app was outstanding. Their dedication to quality and user experience made the project a success!",
+      text: "Code Horizon's expertise in creating a seamless, user-friendly platform for our AI-powered music app was outstanding. Their dedication to quality and user experience made the project a success!",
       name: "Shashidhar Thora",
       position: "CEO at Coredata Inc",
       image: "https://img.freepik.com/premium-photo/handsome-businessman-formal-suit-wearing-glasses_786444-411.jpg?uid=R47973407&ga=GA1.1.1009564255.1740590430&semt=ais_hybrid" // Update with the correct path

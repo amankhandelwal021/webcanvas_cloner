@@ -9,7 +9,7 @@ const FooterInfo = () => {
           <div className="col-span-1">
             <div className="flex items-center mb-4">
               <a href="#home" className="text-4xl font-display font-bold tracking-tight mb-6 inline-block">
-                design<span className="text-blue-500">owe</span>
+                code<span className="text-blue-500">horizon</span>
               </a>
               <span className="bg-blue-500 h-20 w-0.5 mx-5"></span>
               <div>
