@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -29,7 +28,7 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-300 ease-in-out',
-        isScrolled ? 'py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-sm' : 'py-6 bg-transparent'
+        isScrolled ? 'py-4 bg-white/90 dark:bg-black/90 shadow-sm' : 'py-6 bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -68,31 +67,44 @@ const Navbar = () => {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-white dark:bg-black z-40 animate-fade-in">
-          <nav className="h-full flex flex-col items-center justify-center space-y-8 p-8">
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                to={link.url}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-2xl font-medium hover:text-blue-500 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link 
-              to="/contact" 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-4 bg-black text-white dark:bg-white dark:text-black px-8 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:shadow-lg"
-            >
-              Get in Touch
-            </Link>
-          </nav>
-        </div>
+
+      {/* Mobile Navigation - Slide in from Right */}
+      <div className={cn(
+        "fixed inset-0 bg-black/50 z-40 transition-opacity duration-300",
+        isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
       )}
+      onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      <div className={cn(
+        "fixed top-0 right-0 h-full w-64 bg-white/90 dark:bg-black shadow-lg z-[9999] transform transition-transform duration-300",
+        isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      )}>
+        <div className="flex justify-end p-4">
+          <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close Menu">
+            <X size={24} />
+          </button>
+        </div>
+        <nav className="flex flex-col items-center space-y-6 mt-8">
+          {navLinks.map((link, index) => (
+            <Link
+              key={index}
+              to={link.url}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg font-medium hover:text-blue-500 transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link 
+            to="/contact" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="mt-4 bg-black text-white dark:bg-white dark:text-black px-8 py-3 rounded-md text-lg font-medium transition-all duration-300 hover:shadow-lg"
+          >
+            Get in Touch
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 };

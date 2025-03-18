@@ -75,7 +75,7 @@ const About = () => {
             </h2>
             
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6 leading-relaxed">
-              Founded in 2015, we're a team of designers, developers, and strategists passionate about creating exceptional digital products that make a difference. Our collaborative approach ensures that we deliver solutions that exceed expectations.
+              Founded in 2017, we're a team of designers, developers, and strategists passionate about creating exceptional digital products that make a difference. Our collaborative approach ensures that we deliver solutions that exceed expectations.
             </p>
             
             <div className="space-y-3 mb-8">
@@ -94,7 +94,7 @@ const About = () => {
             <div className="flex flex-wrap gap-6 mt-8">
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400">
-                  50+
+                  30+
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mt-1">
                   Projects Completed
@@ -103,7 +103,7 @@ const About = () => {
               
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400">
-                  30+
+                  25+
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mt-1">
                   Happy Clients
@@ -112,7 +112,7 @@ const About = () => {
               
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400">
-                  5+
+                  8+
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mt-1">
                   Years of Experience

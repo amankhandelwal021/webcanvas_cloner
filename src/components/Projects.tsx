@@ -55,7 +55,7 @@ const Projects = () => {
                       </div>
 
                       <Link
-                        to={project.slug}
+                        to={`/projects/${project.slug}`}
                         className="inline-flex items-center hover:underline underline-offset-8"
                       >
                         View Case Study

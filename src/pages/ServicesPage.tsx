@@ -265,9 +265,6 @@ const ServicesPage = () => {
           </Link>
         </div>
       </section> */}
-
-      <Contact />
-      <Awards />
     </PageLayout>
   );
 };

@@ -84,8 +84,8 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
         
         {children}
       </main>
-      <Contact />
       <Awards />
+      <Contact />
       <Footer />
     </div>
   );
