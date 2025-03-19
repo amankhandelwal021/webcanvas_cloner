@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,7 @@ const Contact = () => {
     help: '',
     message: '',
     verification: '',
-    nda: false,
+    proposal: false,
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,26 +47,47 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+
+    try {
+      // Initialize EmailJS
+      emailjs.init("eOyhU0hhF2XPrsvtP");
+
+      const emailParams = {
+        message: `
+                    
+          Lead Information:
+          Name: ${formData.name}
+          Email: ${formData.email}
+          Phone: ${formData.phone}
+          Budget: ${formData.budget}
+          Service Required: ${formData.help}
+          Need Proporal: ${formData.proposal ? 'Yes': 'No'}
+
+          Lead Requests:
+          ${formData.message}
+        `
+      };
+
+      const response = await emailjs.send(
+        "service_s0o9rei",
+        "template_ggeb635",
+        emailParams
+      );
+
+      if (response.status === 200) {
+        setIsSubmitting(false);
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
       setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        budget: '',
-        help: '',
-        message: '',
-        verification: '',
-        nda: false,
-      });
-      // Normally you would submit to a backend here
-    }, 1500);
+      throw error;
+    }
+
   };
 
   const contactInfo = [
@@ -212,10 +234,10 @@ const Contact = () => {
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                     >
                       <option value="">Select Budget</option>
-                      <option value="under-10k">Under $10k</option>
-                      <option value="10k-50k">$10k - $50k</option>
-                      <option value="50k-100k">$50k - $100k</option>
-                      <option value="over-100k">Over $100k</option>
+                      <option value="under-$10k">Under $10k</option>
+                      <option value="$10k-50k">$10k - $50k</option>
+                      <option value="$50k-100k">$50k - $100k</option>
+                      <option value="over-$100k">Over $100k</option>
                     </select>
                   </div>
                 </div>
@@ -277,12 +299,12 @@ const Contact = () => {
                   <label className="flex items-center">
                     <input
                       type="checkbox"
-                      name="nda"
-                      checked={formData.nda}
+                      name="proposal"
+                      checked={formData.proposal}
                       onChange={handleChange}
                       className="form-checkbox text-blue-600 dark:text-blue-400"
                     />
-                    <span className="ml-2 text-gray-700 dark:text-gray-300">Send me an NDA</span>
+                    <span className="ml-2 text-gray-700 dark:text-gray-300">Send me a proposal</span>
                   </label>
                 </div>
                 
