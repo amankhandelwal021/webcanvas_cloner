@@ -72,7 +72,7 @@ const Contact = () => {
       };
 
       const response = await emailjs.send(
-        "service_s0o9rei",
+        "service_s1u9xtq",
         "template_ggeb635",
         emailParams
       );

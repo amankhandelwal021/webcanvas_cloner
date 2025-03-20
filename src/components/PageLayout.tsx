@@ -1,5 +1,5 @@
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { ArrowRight } from 'lucide-react';
@@ -26,6 +26,13 @@ interface PageLayoutProps {
 }
 
 const PageLayout = ({ children, hero }: PageLayoutProps) => {
+
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950 min-h-screen overflow-hidden">
       <Navbar />
@@ -41,7 +48,11 @@ const PageLayout = ({ children, hero }: PageLayoutProps) => {
 
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-8">
-              <div className="space-y-4 max-w-5xl transition-all duration-1000 opacity-100">
+              <div 
+               className={`space-y-4 max-w-5xl transition-all duration-1000 ${
+                isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'
+              }`}
+              >
                 <span className="inline-block bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
                   {hero.badge}
                 </span>

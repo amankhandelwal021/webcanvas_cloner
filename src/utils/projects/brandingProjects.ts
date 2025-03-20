@@ -4,7 +4,7 @@ export const brandingProjects: Project[] = [
   {
     id: 6,
     title: "Luxury Brand Identity: Elegance Jewelry",
-    slug: 'luxury-brand-identity',
+    slug: '/projects/luxury-brand-identity',
     category: "branding",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
     client: "Elegance Jewelry",
