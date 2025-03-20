@@ -22,6 +22,23 @@ export const getProjects = (category?: string): Project[] => {
   return allProjects.filter(project => project.category === category);
 };
 
+export const getFeaturedProjects = (count: number = 4): any[] => {
+  let allProjects = [
+    ...webProjects,
+    ...mobileProjects,
+    ...aiProjects
+  ].sort(() => Math.random() - 0.5) // Shuffle projects randomly
+   .slice(0, count) // Select only the required count
+
+   .map((project, index) => ({
+      ...project,
+      fullWidth: index < 2 ? true : project.fullWidth
+   }));
+
+  return allProjects;
+};
+
+
 /**
  * Get a specific project by its slug
  * @param slug The project slug to find

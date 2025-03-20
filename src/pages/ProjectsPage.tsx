@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Star, Users, Calendar, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
-import { getProjects } from '@/utils/projects';
+import { getFeaturedProjects, getProjects } from '@/utils/projects';
 
 interface Project {
   id: number;
@@ -31,13 +31,14 @@ const ProjectsPage = () => {
     { value: 'web', label: 'Web Design' },
     { value: 'branding', label: 'Branding' },
     { value: 'mobile', label: 'Mobile Apps' },
-    { value: 'software', label: 'Custom Software' },
+    // { value: 'software', label: 'Custom Software' },
     { value: 'ai', label: 'AI & ML' },
   ];
   
   const projects = getProjects();
 
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = getFeaturedProjects(6);
+
   
   const testimonials = [
     {

@@ -153,7 +153,7 @@ const Services = () => {
         <div className="mt-16 md:mt-20 text-center">
           <Link
             to="/services"
-            className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
+            className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl hover:shadow-blue-500/20  duration-300"
           >
             <span>Discover all services</span>
             <ArrowRight size={16} className="ml-2" />

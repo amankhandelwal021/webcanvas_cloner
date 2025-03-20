@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getProjects } from '../utils/projectData';
+import { getFeaturedProjects } from '@/utils/projects';
 
 const Projects = () => {
-  const projects = getProjects();
+  const projects = getFeaturedProjects(5);
 
 
   return (

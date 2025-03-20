@@ -236,7 +236,7 @@ const ProjectDetail = () => {
       )}
 
       {/* Project Gallery */}
-      {project.gallery && project.gallery.length > 0 && (
+      {/* {project.gallery && project.gallery.length > 0 && (
         <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
           <div className="container px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-10 text-center">Project Gallery</h2>
@@ -254,7 +254,7 @@ const ProjectDetail = () => {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* Next Project */}
       {project.nextProject && (
