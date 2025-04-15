@@ -6,7 +6,7 @@ const FooterInfo = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Logo and Tagline */}
-          <div className="col-span-1">
+          <div className="col-span-3">
             <div className="flex items-center mb-4">
               <a href="#home" className="text-4xl font-display font-bold tracking-tight mb-6 inline-block">
                 code<span className="text-blue-500">horizon</span>
@@ -30,7 +30,6 @@ const FooterInfo = () => {
             </address>
             <a href="tel:+919261638242" className="text-white hover:underline block">+91 9261638242</a>
           </div>
-
           
         </div>
       </div>
